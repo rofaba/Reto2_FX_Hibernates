@@ -1,0 +1,83 @@
+A muy alto nivel, la app debe:
+
+Login
+
+Usuario se autentica con nombre_usuario + contraseña.
+
+Si es admin podrá añadir películas al catálogo.
+
+Pantalla principal (después de login)
+
+Tabla con copias de películas SOLO del usuario logueado.
+
+Ver título, estado, soporte.
+
+Botones para:
+
+Añadir copia (de una película ya existente).
+
+Editar copia (estado, soporte).
+
+Eliminar copia.
+
+(Si es admin) Añadir nueva película.
+
+Ver detalle (copia + película) en ventana aparte.
+
+Cerrar sesión / salir.
+
+Restricciones clave
+
+Nadie puede ver ni modificar copias de otro usuario.
+
+No se elimina la película, solo la copia.
+
+1. Roadmap de trabajo
+
+Te propongo este orden:
+
+Base de datos y modelo (SQL + Entities Hibernate)
+a) Script MySQL.
+b) Clases Usuario, Pelicula, Copia anotadas con JPA.
+
+Configurar Hibernate
+
+hibernate.cfg.xml (o persistence.xml, pero vayamos a lo simple).
+
+Clase HibernateUtil para obtener SessionFactory.
+
+Capa de acceso a datos (DAO/Repository)
+
+UsuarioDao con findByNombreUsuarioYPassword.
+
+CopiaDao para listar copias por usuario, CRUD.
+
+PeliculaDao para listar/añadir películas.
+
+Lógica de negocio (Service)
+
+AuthService (login + usuario actual).
+
+CopiaService, PeliculaService con validaciones de “solo dueño” y “solo admin”.
+
+JavaFX
+
+Proyecto JavaFX configurado.
+
+Pantalla LoginView + LoginController.
+
+Pantalla principal MainView + MainController con TableView.
+
+Ventana detalle DetalleCopiaView + DetalleCopiaController.
+
+Ventanas para alta/edición de copias y alta de películas.
+
+Remates
+
+Validaciones básicas (campos vacíos, mensajes de error).
+
+Javadoc.
+
+Pequeñas mejoras (filtros, ordenación, etc.).
+
+Subir a GitHub.

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.javafx_hibernate.ui.controller.MainController">
+
+    <top>
+        <ToolBar>
+            <Label text="Catálogo de copias de películas"/>
+            <Pane HBox.hgrow="ALWAYS"/>
+            <Button text="Cerrar sesión" onAction="#onLogout"/>
+        </ToolBar>
+    </top>
+
+    <center>
+        <Label fx:id="lblBienvenida"
+               text="Bienvenido"
+               style="-fx-font-size: 16px;"
+               BorderPane.alignment="CENTER">
+            <BorderPane.margin>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </BorderPane.margin>
+        </Label>
+    </center>
+
+</BorderPane>
