@@ -42,7 +42,13 @@ public class CopiaRepository implements CopiaDao {
             tx = session.beginTransaction();
             Copia copia = session.get(Copia.class, id);
             if (copia != null) {
-                session.delete(copia);
+                //debe comprobar el numero de copias existentes para eliminar o decrementar
+                if (copia.getCantidad() > 1) {
+                    copia.setCantidad(copia.getCantidad() - 1);
+                    session.update(copia);
+                } else {
+                    session.delete(copia);
+                }
             }
             tx.commit();
         } catch (Exception e) {
