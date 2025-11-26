@@ -41,6 +41,7 @@ public class DetalleCopiaController {
 
         lblEstado.setText(copia.getEstado());
         lblSoporte.setText(copia.getSoporte());
+        lblCantidad.setText(copia.getCantidad().toString());
     }
 
     @FXML
