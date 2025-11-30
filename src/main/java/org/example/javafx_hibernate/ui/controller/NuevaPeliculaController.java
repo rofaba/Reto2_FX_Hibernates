@@ -48,7 +48,7 @@ public class NuevaPeliculaController implements Initializable {
         pelicula.setDescripcion(txtDescripcion.getText());
         String imagen=txtImagen.getText().trim();
 
-        /* Establece la ruta de la imagen si se proporciona, de lo contrario la deja como null. */
+        /* Establece la ruta de la imagen si se proporciona, en caso contrario null. */
         if (!imagen.isEmpty()) {
             String rutaImagen = "/images/peliculas/"+imagen;
             pelicula.setImagen(rutaImagen);
